@@ -1,0 +1,27 @@
+import { useState } from "react";
+import "./App.css";
+import Footer from "./components/Footer/Footer";
+
+function App() {
+  const [text, setText] = useState("");
+
+  const handleInput = (e) => setText(e.target.value);
+
+  return (
+    <main className="App">
+      <img
+        data-testid="giphy"
+        src="https://media.giphy.com/media/CuuSHzuc0O166MRfjt/giphy.gif"
+        alt="giphy"
+      />
+
+      <section>
+        <input onChange={handleInput} placeholder="Type your name!" />
+        <h1>Hello, {text}</h1>
+      </section>
+      <Footer />
+    </main>
+  );
+}
+
+export default App;
